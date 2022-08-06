@@ -1,10 +1,9 @@
 //_syle_guide.scss
 
 //* Colors
-$first_color: #090074;
-$firs_color_alpha: #090074cc;
-$second_color: #ef8100;
-$second_color_alpha: #ef8100cc;
+$first_color: #ef8100;
+$second_color: #007eb3;
+$second_color-alpha: #007eb31a;
 $link_color: #0d8bff;
 $light-gray: #cbc8c8;
 $medium-gray: #8e8d8d;
@@ -13,31 +12,18 @@ $white: #ffff;
 $black: #0000;
 
 //* Font
-
-// $font-family:
-
-h1 {
-  font-size: 3rem;
+html {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 16px;
 }
 
-h2 {
-  font-size: 2, 5;
+:root {
+  $step-2: clamp(0.56rem, calc(0.75rem + -0.27vw), 0.69rem);
+  $step-1: clamp(0.83rem, calc(0.83rem + 0vw), 0.83rem);
+  $step0: clamp(1rem, calc(0.9rem + 0.49vw), 1.25rem);
+  $step1: clamp(1.2rem, calc(0.94rem + 1.32vw), 1.88rem);
+  $step2: clamp(1.44rem, calc(0.9rem + 2.68vw), 2.81rem);
+  $step3: clamp(1.73rem, calc(0.76rem + 4.86vw), 4.22rem);
+  $step4: clamp(2.07rem, calc(0.41rem + 8.3vw), 6.33rem);
+  $step5: clamp(2.49rem, calc(-0.25rem + 13.67vw), 9.49rem);
 }
-
-h3 {
-  font-size: size 2rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1rem;
-}
-
-h6 {
-  font-size: 0.75rem;
-}
-
-// $font-family:;
