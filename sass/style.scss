@@ -1,0 +1,73 @@
+@use "style_guide" as g;
+@use "reset";
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+
+.home {
+
+    display: grid;
+    grid-template-columns: 10vw 1fr 1fr;
+    grid-template-rows: 40vh 20vh 40vh;
+    width: 100vw;
+    height: 100vh;
+
+
+    h1 {
+
+        grid-column-start: 2;
+        grid-row-start: 2;
+        align-self: center;
+        font-size: ;
+    }
+
+    .background {
+        z-index: -99;
+        width: 100vw;
+        height: 100vh;
+
+        .blue-content {
+
+            filter: drop-shadow(0 7px 5px rgb(44, 44, 44));
+
+            @for $i from 1 through 7 {
+                .blue:nth-of-type(#{$i}n) {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
+                    background-color: g.$s-color;
+                    opacity: 0.8 - (0.1 * $i);
+                    height: $i*7vh;
+                    width: 100vw;
+                    position: absolute;
+                    z-index: -1 * $i;
+
+                }
+            }
+        }
+
+        .orange-content {
+
+            position: absolute;
+            bottom: 0vh;
+
+            filter: drop-shadow(0 -7px 3px rgb(44, 44, 44));
+
+            @for $i from 1 through 7 {
+                .orange:nth-of-type(#{$i}n) {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
+                    background-color: g.$p-color;
+                    opacity: 0.8 - (0.1 * $i);
+                    height: $i*7vh;
+                    width: 100vw;
+                    position: absolute;
+                    z-index: -1 * $i;
+                    bottom: 0;
+                    transform: scaleY(-1);
+
+                }
+
+            }
+        }
+    }
+}
